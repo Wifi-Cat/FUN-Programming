@@ -1,0 +1,47 @@
+6
+start
+	out "string literal with spaces"
+end
+start
+	out 1+1+1+1
+	out 1+varone+vartwo
+end
+start
+	bool 1 < 2
+ 		out "true"
+	endbool
+	bool 2 < 1
+		out "nothing"
+	endbool
+	bool 1 < 2
+		out "level 1"
+		bool 2 < 3
+			out "level 2"
+			bool 3 < 4
+				out "level 3"
+			endbool
+		endbool
+	endbool
+end
+start
+	varthree = 1
+	varfour = 1+1
+	out varthree
+end
+start
+	out "begin loop"
+	loop 10
+		out var
+		var = var + 1
+	endloop
+end
+start
+	out "nested loops"
+	loop 10
+		varone = varone + 1
+		out varone
+		loop 5
+			varone = varone + 100
+		endloop
+	endloop
+end
